@@ -6,6 +6,11 @@ const site = document.querySelector('#site');
 const openButton = document.querySelector('#open-invite');
 const params = new URLSearchParams(window.location.search);
 const guestFromLink = params.get('to');
+const invitationType = params.get('invite') === 'church' ? 'church' : 'full';
+const invitationCategory = invitationType === 'church' ? 'Gereja saja' : 'Gereja + Dinner';
+if (invitationType === 'church') {
+  document.querySelector('[data-invitation-event="dinner"]')?.classList.add('is-hidden');
+}
 if (guestFromLink) document.querySelector('#invite-to').innerHTML = `Kepada Yth.<br><strong>${escapeHtml(guestFromLink)}</strong>`;
 
 openButton.addEventListener('click', () => {
@@ -244,6 +249,7 @@ form.addEventListener('submit', async (event) => {
   const button = form.querySelector('[type="submit"]');
   const payload = Object.fromEntries(new FormData(form));
   payload.submittedAt = new Date().toISOString();
+  payload.invitationCategory = invitationCategory;
   button.disabled = true;
   status.textContent = 'Mengirim konfirmasi…';
   showRsvpModal('loading', 'Please wait while we send your confirmation.');

@@ -10,16 +10,22 @@ function doPost(e) {
     const data = JSON.parse(e.postData.contents || '{}');
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(['Waktu Kirim', 'Nama', 'WhatsApp', 'Kehadiran', 'Jumlah Tamu', 'Pesan']);
+      sheet.appendRow(['Waktu Kirim', 'Nama', 'WhatsApp', 'Kehadiran', 'Jumlah Tamu', 'Pesan', 'Kategori Undangan']);
       sheet.setFrozenRows(1);
+    } else {
+      const headers = sheet.getRange(1, 1, 1, Math.max(sheet.getLastColumn(), 1)).getValues()[0];
+      if (!headers.includes('Kategori Undangan')) {
+        sheet.getRange(1, headers.length + 1).setValue('Kategori Undangan');
+      }
     }
     sheet.appendRow([
       new Date(),
       safeCell(data.name),
       safeCell(data.phone),
       safeCell(data.attendance),
-      Math.max(1, Math.min(4, Number(data.guests) || 1)),
-      safeCell(data.message)
+      Math.max(1, Math.min(2, Number(data.guests) || 1)),
+      safeCell(data.message),
+      safeCell(data.invitationCategory)
     ]);
     return ContentService.createTextOutput(JSON.stringify({ ok: true })).setMimeType(ContentService.MimeType.JSON);
   } finally {

@@ -13,7 +13,7 @@ Buka `index.html` di browser, atau publikasikan folder project ini ke static hos
 3. Pilih **Deploy → New deployment → Web app**. Atur **Execute as: Me** dan akses **Anyone**, lalu deploy dan salin URL Web App yang berakhir dengan `/exec`.
 4. Buka `app.js`, isi nilai `RSVP_ENDPOINT` dengan URL tersebut, lalu publikasikan ulang website.
 
-Sesudah terhubung, setiap kiriman RSVP akan menambahkan satu baris ke sheet: waktu kirim, nama, WhatsApp, kehadiran, jumlah tamu, dan pesan. Deploy ulang versi baru dari Apps Script jika suatu saat Anda mengubah script setelah deployment.
+Sesudah terhubung, setiap kiriman RSVP akan menambahkan satu baris ke sheet: waktu kirim, nama, WhatsApp, kehadiran, jumlah tamu, pesan, dan kategori undangan. Kategori undangan diisi otomatis dari parameter tautan. Deploy ulang versi baru dari Apps Script jika suatu saat Anda mengubah script setelah deployment.
 
 ### Perilaku sebelum Sheets terhubung
 
@@ -24,3 +24,12 @@ Sampai `RSVP_ENDPOINT` diisi, form menyimpan RSVP di `localStorage` browser peng
 Waktu acara dan urutan acara adalah rancangan awal: tamu mulai hadir pukul 15.00, pemberkatan 15.30, dan resepsi 18.00 WIB. Silakan sesuaikan bila jadwal final sudah tersedia. Pemutar musik sudah disiapkan namun sumber audio belum diisi.
 
 Link undangan personal dapat memakai query `?to=Nama%20Tamu`, misalnya `https://contoh.id/?to=Keluarga%20Budi`.
+
+### Tipe undangan
+
+Gunakan satu website dengan parameter `invite`:
+
+- Undangan gereja dan dinner: `https://contoh.id/?invite=full`
+- Undangan gereja saja: `https://contoh.id/?invite=church`
+
+Jika parameter tidak dicantumkan, website menampilkan undangan lengkap. Kategori yang sama ikut dikirim ke RSVP sebagai `invitationCategory` (`Gereja + Dinner` atau `Gereja saja`). Script di `google-apps-script.gs` menambahkan kolom **Kategori Undangan** dan membatasi jumlah tamu maksimal 2. Salin script terbaru ke Apps Script dan deploy ulang agar kolom tersebut tersimpan di Sheet.
