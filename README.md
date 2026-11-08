@@ -13,7 +13,7 @@ Buka `index.html` di browser, atau publikasikan folder project ini ke static hos
 3. Pilih **Deploy → New deployment → Web app**. Atur **Execute as: Me** dan akses **Anyone**, lalu deploy dan salin URL Web App yang berakhir dengan `/exec`.
 4. Buka `app.js`, isi nilai `RSVP_ENDPOINT` dengan URL tersebut, lalu publikasikan ulang website.
 
-Sesudah terhubung, setiap kiriman RSVP akan menambahkan satu baris ke sheet: waktu kirim, nama, WhatsApp, kehadiran, jumlah tamu, pesan, dan kategori undangan. Kategori undangan diisi otomatis dari parameter tautan. Deploy ulang versi baru dari Apps Script jika suatu saat Anda mengubah script setelah deployment.
+Sesudah terhubung, setiap kiriman RSVP akan menambahkan satu baris ke sheet: waktu kirim, nama, WhatsApp, jumlah tamu, pesan, dan kategori undangan. Kategori undangan diisi otomatis dari parameter tautan. Deploy ulang versi baru dari Apps Script jika suatu saat Anda mengubah script setelah deployment.
 
 ### Perilaku sebelum Sheets terhubung
 
