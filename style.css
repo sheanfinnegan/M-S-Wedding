@@ -260,6 +260,8 @@ main>*,.section,.story-grid,.story-copy,.details-heading,.event-cards,.event-car
 }
 .gift-section{text-align:center;position:relative;overflow:hidden;background:#f4f6e8;padding-top:78px;padding-bottom:84px}
 .event-card.is-hidden{display:none!important}
+.event-cards.has-single-event{grid-template-columns:minmax(0,650px);justify-content:center}
+@media(max-width:760px){.event-cards.has-single-event{grid-template-columns:1fr}}
 .gift-section:before,.gift-section:after{content:"";position:absolute;width:190px;height:190px;background:url("Photo/floral-ornament.svg") center/contain no-repeat;opacity:.15;pointer-events:none}
 .gift-section:before{left:-52px;top:-34px;transform:rotate(-18deg)}
 .gift-section:after{right:-44px;bottom:-38px;transform:rotate(165deg)}

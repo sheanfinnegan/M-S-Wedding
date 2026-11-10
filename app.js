@@ -6,10 +6,14 @@ const site = document.querySelector('#site');
 const openButton = document.querySelector('#open-invite');
 const params = new URLSearchParams(window.location.search);
 const guestFromLink = params.get('to');
-const invitationType = params.get('invite') === 'church' ? 'church' : 'full';
-const invitationCategory = invitationType === 'church' ? 'Gereja saja' : 'Gereja + Dinner';
-if (invitationType === 'church') {
-  document.querySelector('[data-invitation-event="dinner"]')?.classList.add('is-hidden');
+const invitationType = params.get('invite') === 'dinner' ? 'dinner' : 'full';
+const invitationCategory = invitationType === 'dinner' ? 'Dinner' : 'Full';
+if (invitationType === 'dinner') {
+  document.querySelector('[data-invitation-event="full"]')?.classList.add('is-hidden');
+  document.querySelector('.event-cards')?.classList.add('has-single-event');
+  const guestCount = document.querySelector('#guest-count');
+  guestCount?.querySelector('option[value="2"]')?.remove();
+  if (guestCount) guestCount.value = '1';
 }
 if (guestFromLink) document.querySelector('#invite-to').innerHTML = `Kepada Yth.<br><strong>${escapeHtml(guestFromLink)}</strong>`;
 

@@ -29,7 +29,7 @@ Link undangan personal dapat memakai query `?to=Nama%20Tamu`, misalnya `https://
 
 Gunakan satu website dengan parameter `invite`:
 
-- Undangan gereja dan dinner: `https://contoh.id/?invite=full`
-- Undangan gereja saja: `https://contoh.id/?invite=church`
+- Undangan lengkap (Holy Matrimony dan Wedding Dinner, RSVP 1–2 orang): `https://contoh.id/?invite=full`
+- Undangan Wedding Dinner saja (RSVP 1 orang): `https://contoh.id/?invite=dinner`
 
-Jika parameter tidak dicantumkan, website menampilkan undangan lengkap. Kategori yang sama ikut dikirim ke RSVP sebagai `invitationCategory` (`Gereja + Dinner` atau `Gereja saja`). Script di `google-apps-script.gs` menambahkan kolom **Kategori Undangan** dan membatasi jumlah tamu maksimal 2. Salin script terbaru ke Apps Script dan deploy ulang agar kolom tersebut tersimpan di Sheet.
+Jika parameter tidak dicantumkan, website menampilkan undangan lengkap. Kategori yang sama ikut dikirim ke RSVP sebagai `invitationCategory` (`Full` atau `Dinner`). Script di `google-apps-script.gs` menambahkan kolom **Kategori Undangan** dan membatasi jumlah tamu maksimal 2. Salin script terbaru ke Apps Script dan deploy ulang agar kolom tersebut tersimpan di Sheet.
