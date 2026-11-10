@@ -6,8 +6,17 @@ const site = document.querySelector('#site');
 const openButton = document.querySelector('#open-invite');
 const params = new URLSearchParams(window.location.search);
 const guestFromLink = params.get('to');
-const invitationType = params.get('invite') === 'dinner' ? 'dinner' : 'full';
-const invitationCategory = invitationType === 'dinner' ? 'Dinner' : 'Full';
+const requestedInvitationType = params.get('invite');
+const invitationType = ['full', 'church', 'dinner'].includes(requestedInvitationType) ? requestedInvitationType : 'full';
+const invitationCategory = {
+  full: 'church & dinner',
+  church: 'church only',
+  dinner: 'dinner only'
+}[invitationType];
+if (invitationType === 'church') {
+  document.querySelector('[data-invitation-event="dinner"]')?.classList.add('is-hidden');
+  document.querySelector('.event-cards')?.classList.add('has-single-event');
+}
 if (invitationType === 'dinner') {
   document.querySelector('[data-invitation-event="full"]')?.classList.add('is-hidden');
   document.querySelector('.event-cards')?.classList.add('has-single-event');
