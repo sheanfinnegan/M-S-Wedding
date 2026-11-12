@@ -227,6 +227,7 @@ main>*,.section,.story-grid,.story-copy,.details-heading,.event-cards,.event-car
 .submit-rsvp:hover,.submit-rsvp:focus-visible,.submit-rsvp:active{background:var(--ink)!important;color:var(--lime)!important;box-shadow:0 0 0 2px var(--lime)}
 .countdown-content .back-top{color:#fff;border-color:var(--lime);margin-top:30px}
 @media(max-width:760px){.event-card-copy{padding:25px 24px 0px 25px}.event-venue-image{height:245px}.countdown-section{height:auto;min-height:430px;padding:42px 0}}
+@media(max-width:760px){.event-card-venue{padding:0!important;overflow:hidden}.event-card-venue:first-child .event-venue-image{object-fit:cover;background:transparent}.event-card-venue .event-venue-image{display:block;width:100%;margin:0}}
 .opening{background:radial-gradient(ellipse at 50% 45%,rgba(255,255,255,.82),rgba(224,224,221,.95) 70%),url("Photo/DSC141%20kanvas%20%20A.jpg.jpeg") center 32%/cover}
 .opening:after{display:none}
 .story:after{display:none}
