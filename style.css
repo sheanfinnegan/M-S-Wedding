@@ -290,3 +290,21 @@ main>*,.section,.story-grid,.story-copy,.details-heading,.event-cards,.event-car
 .gift-account-number:hover{color:var(--olive)}
 .gift-copy-feedback{min-height:17px;margin:12px 0 0;color:var(--olive);font-size:11px}
 @media(max-width:480px){.gift-section{padding:58px 7%}.gift-art{height:112px}.gift-flower-svg{width:84px;height:84px}.gift-envelope-svg{width:125px;height:88px}.gift-modal-card{padding:32px 20px 20px}.gift-account{padding:12px 10px;gap:4px 5px}.gift-account-number{font-size:11px}}
+.parents-section{position:relative;display:grid;place-items:center;overflow:hidden;padding:0px 8% 160px 8%;background:linear-gradient(180deg,var(--paper),#f0f2e3 50%,var(--paper));border:0}
+.parents-card{position:relative;z-index:1;width:min(100%,1260px);padding:24px 18px;text-align:center;border:0;background:transparent;box-shadow:none}
+.parents-eyebrow{justify-content:center;margin:0 0 30px;color:var(--olive);font-size:14px;letter-spacing:.2em}
+.parents-families{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:clamp(18px,3vw,40px)}
+.parent-family{margin:0 auto;min-width:0}
+.parent-role{margin:0 0 10px;color:#777b64;font:500 11px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.parent-names{margin:0;color:var(--ink);font:italic 400 clamp(22px,3vw,32px)/1.35 var(--serif)}
+.parent-family:first-child .parent-names:nth-of-type(2){white-space:nowrap!important;word-break:normal;overflow-wrap:normal}
+.parent-cross{display:inline-flex;width:.58em;height:.82em;align-items:center;vertical-align:-.06em;margin:0 5px;color:var(--ink)}
+.parent-cross svg{display:block;width:100%;height:100%;fill:currentColor}
+/* Remove decorative flower motifs throughout the invitation. */
+.opening:after,.story:after,.details:after,.venue-photo:after,.gallery-section:before,.gallery-section:after,.closing:after,.rsvp-section:after,.gift-section:before,.gift-section:after,.parents-section:before,.parents-section:after{display:none!important;content:none!important;background:none!important}
+.parent-ampersand{color:var(--olive);font-size:.72em}
+.parents-divider{width:1px;height:110px;background:rgba(147,159,50,.25)}
+@media(max-width:1200px){.parents-families{grid-template-columns:1fr;gap:0}.parents-divider{width:min(220px,60%);height:1px;margin:24px auto}}
+@media(max-width:600px){.parents-section{padding:48px 0}.parents-card{width:100%;max-width:none;padding:0px 8px 70px 8px}.parents-eyebrow{font-size:12px;letter-spacing:.13em;margin-bottom:26px}.parent-names{font-size:clamp(20px,5.8vw,27px)}.parent-family:first-child .parent-names:nth-of-type(2){white-space:nowrap!important;word-break:normal;overflow-wrap:normal}}
+@media(max-width:600px){.parent-cross{margin-left:1px;margin-right:0}}
+@media(max-width:600px){.parents-eyebrow{margin-bottom:38px}}

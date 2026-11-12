@@ -56,7 +56,7 @@ window.setInterval(updateCountdown, 1000);
 
 // Reveal content as it approaches the viewport; preserve normal rendering in older browsers.
 const revealTargets = document.querySelectorAll(
-  '.story-grid > *, .countdown-content, .event-cards > *, .venue-card, .venue-map, .rsvp-photo, .rsvp-panel, .gift-section'
+  '.story-grid > *, .countdown-content, .event-cards > *, .venue-card, .venue-map, .parents-section, .rsvp-photo, .rsvp-panel, .gift-section'
 );
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('motion-ready');
