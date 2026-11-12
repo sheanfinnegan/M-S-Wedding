@@ -223,7 +223,7 @@ main>*,.section,.story-grid,.story-copy,.details-heading,.event-cards,.event-car
 .event-card-venue .event-desc{margin:0 0 17px}
 .event-card-venue .text-link{display:inline-block;margin:0 0 23px}.text-link-2{display:inline-block;margin:0 0 23px}
 .event-venue-image{display:block;width:100%;height:clamp(220px,28vw,340px);object-fit:cover;object-position:center}
-.event-card-venue:first-child .event-venue-image{object-fit:contain;background:#fff}
+.event-card-venue:first-child .event-venue-image{object-fit:cover;object-position:center;background:transparent}
 .submit-rsvp:hover,.submit-rsvp:focus-visible,.submit-rsvp:active{background:var(--ink)!important;color:var(--lime)!important;box-shadow:0 0 0 2px var(--lime)}
 .countdown-content .back-top{color:#fff;border-color:var(--lime);margin-top:30px}
 @media(max-width:760px){.event-card-copy{padding:25px 24px 0px 25px}.event-venue-image{height:245px}.countdown-section{height:auto;min-height:430px;padding:42px 0}}
